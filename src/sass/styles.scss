@@ -1,3 +1,120 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @import './reset';
+@import './variables';
+
+.visually-hidden:not(:focus):not(:active) {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0); /* Legacy property for Internet Explorer */
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+body {
+	display: grid;
+	place-items: center;
+	place-content: center;
+	padding: $s-56-102 $s-32 $s-44-164;
+
+	font-family: $poppins;
+	font-size: $text-15;
+	line-height: 1.4;
+	letter-spacing: 0.2px;
+	color: $grey-400;
+	background-color: $grey-50;
+
+	-webkit-font-smoothing: antialiased;
+}
+
+header {
+	text-align: center;
+	color: $grey-500;
+
+	h2 {
+		font-size: $text-24-36;
+		font-weight: $font-200;
+		margin-bottom: $s-16;
+
+		strong {
+			font-weight: $font-600;
+		}
+	}
+
+	p {
+		max-width: 56ch;
+		letter-spacing: 0.1px;
+	}
+}
+
+section {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: $s-32;
+	margin-block-start: $s-60-72;
+
+	@media (min-width: 74rem) {
+		place-items: center;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-template-areas:
+			'supervisor team-builder calculator'
+			'supervisor karma calculator';
+	}
+
+	div {
+		max-width: 21.875rem;
+		padding: $s-28 $s-32 $s-48;
+		font-size: $text-12;
+		border-radius: 8px;
+		background-color: $white;
+		box-shadow: $shadow;
+
+		&:nth-child(1) {
+			border-block-start: 4px solid $cyan;
+		}
+		&:nth-child(2) {
+			border-block-start: 4px solid $red;
+		}
+		&:nth-child(3) {
+			border-block-start: 4px solid $orange;
+		}
+		&:nth-child(4) {
+			border-block-start: 4px solid $blue;
+		}
+
+		h3 {
+			font-size: $text-20;
+			font-weight: $font-600;
+			color: $grey-500;
+			margin-bottom: $s-8;
+		}
+
+		img {
+			margin-block-start: $s-32;
+			margin-inline-start: auto;
+		}
+
+		p {
+			letter-spacing: 0.6px;
+			line-height: 1.6;
+		}
+
+		@media (min-width: 74rem) {
+			&:nth-child(1) {
+				grid-area: supervisor;
+			}
+			&:nth-child(2) {
+				grid-area: team-builder;
+			}
+			&:nth-child(3) {
+				grid-area: karma;
+			}
+			&:nth-child(4) {
+				grid-area: calculator;
+			}
+		}
+	}
+}

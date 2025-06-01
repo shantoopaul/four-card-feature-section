@@ -1,45 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-/* 1. Use a more-intuitive box-sizing model */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* 2. Remove default margin */
 * {
+  box-sizing: border-box;
   margin: 0;
 }
 
-/* 3. Enable keyword animations */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    interpolate-size: allow-keywords;
-  }
-}
-body {
-  line-height: 1.6;
-  /* 5. Improve text rendering */
-  -webkit-font-smoothing: antialiased;
-}
-
-/* 6. Improve media defaults */
 img {
   display: block;
   max-width: 100%;
 }
 
-/* 8. Avoid text overflows */
 p,
 h1,
 h2,
 h3 {
   overflow-wrap: break-word;
-  -webkit-hyphens: auto;
-          hyphens: auto;
 }
 
-/* 9. Improve line wrapping */
 p {
   text-wrap: pretty;
 }
@@ -47,6 +23,111 @@ p {
 h1,
 h2,
 h3 {
-  line-height: 1.2;
+  line-height: 1.4;
   text-wrap: balance;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0); /* Legacy property for Internet Explorer */
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  place-content: center;
+  padding: clamp(3.5rem, 2.1607rem + 5.7143vw, 6.4rem) 2rem clamp(2.75rem, -0.7438rem + 14.9068vw, 10.25rem);
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  color: hsl(212, 6%, 44%);
+  background-color: hsl(0, 0%, 98%);
+  -webkit-font-smoothing: antialiased;
+}
+
+header {
+  text-align: center;
+  color: hsl(234, 12%, 34%);
+}
+header h2 {
+  font-size: clamp(1.5rem, 1.1506rem + 1.4907vw, 2.25rem);
+  font-weight: 200;
+  margin-bottom: 1rem;
+}
+header h2 strong {
+  font-weight: 600;
+}
+header p {
+  max-width: 56ch;
+  letter-spacing: 0.1px;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-block-start: clamp(3.75rem, 3.4006rem + 1.4907vw, 4.5rem);
+}
+@media (min-width: 74rem) {
+  section {
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "supervisor team-builder calculator" "supervisor karma calculator";
+  }
+}
+section div {
+  max-width: 21.875rem;
+  padding: 1.75rem 2rem 3rem;
+  font-size: 0.75rem;
+  border-radius: 8px;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0px 0.9px 1px hsla(0, 0%, 62%, 0.36), 0px 3px 3.4px -0.8px hsla(0, 0%, 62%, 0.36), 0px 7.6px 8.5px -1.7px hsla(0, 0%, 62%, 0.36), 0px 18.5px 20.8px -2.5px hsla(0, 0%, 62%, 0.36);
+}
+section div:nth-child(1) {
+  border-block-start: 4px solid hsl(180, 62%, 55%);
+}
+section div:nth-child(2) {
+  border-block-start: 4px solid hsl(0, 78%, 62%);
+}
+section div:nth-child(3) {
+  border-block-start: 4px solid hsl(34, 97%, 64%);
+}
+section div:nth-child(4) {
+  border-block-start: 4px solid hsl(212, 86%, 64%);
+}
+section div h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: hsl(234, 12%, 34%);
+  margin-bottom: 0.5rem;
+}
+section div img {
+  margin-block-start: 2rem;
+  margin-inline-start: auto;
+}
+section div p {
+  letter-spacing: 0.6px;
+  line-height: 1.6;
+}
+@media (min-width: 74rem) {
+  section div:nth-child(1) {
+    grid-area: supervisor;
+  }
+  section div:nth-child(2) {
+    grid-area: team-builder;
+  }
+  section div:nth-child(3) {
+    grid-area: karma;
+  }
+  section div:nth-child(4) {
+    grid-area: calculator;
+  }
 }/*# sourceMappingURL=styles.css.map */

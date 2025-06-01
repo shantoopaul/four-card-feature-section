@@ -3,30 +3,35 @@ $red: hsl(0, 78%, 62%);
 $cyan: hsl(180, 62%, 55%);
 $orange: hsl(34, 97%, 64%);
 $blue: hsl(212, 86%, 64%);
-$grey-500: hsl(234, 12%, 34%);
-$grey-400: hsl(212, 6%, 44%);
 $white: hsl(0, 0%, 100%);
-
-// Font Variables
+$grey-50: hsl(0, 0%, 98%);
+$grey-400: hsl(212, 6%, 44%);
+$grey-500: hsl(234, 12%, 34%);
 
 // Font Family
 $poppins: 'Poppins', sans-serif;
 
 // Font Weight
 $font-200: 200;
-$font-400: 400;
 $font-600: 600;
 
 // Font Size
+$text-12: 0.75rem;
 $text-15: 0.9375rem;
-$text-18: 1.125rem;
 $text-20: 1.25rem;
-$text-24: 1.5rem;
-$text-36: 2.25rem;
+// Dynamic Font Size
+$text-24-36: clamp(1.5rem, 1.1506rem + 1.4907vw, 2.25rem);
 
 // Spacing
 $s-8: 0.5rem;
 $s-16: 1rem;
-$s-24: 1.5rem;
+$s-28: 1.75rem;
 $s-32: 2rem;
 $s-48: 3rem;
+// Dynamic Spacing
+$s-60-72: clamp(3.75rem, 3.4006rem + 1.4907vw, 4.5rem);
+$s-56-102: clamp(3.5rem, 2.1607rem + 5.7143vw, 6.4rem);
+$s-44-164: clamp(2.75rem, -0.7438rem + 14.9068vw, 10.25rem);
+
+$shadow: 0px 0.9px 1px hsl(0deg 0% 62% / 0.36), 0px 3px 3.4px -0.8px hsl(0deg 0% 62% / 0.36),
+	0px 7.6px 8.5px -1.7px hsl(0deg 0% 62% / 0.36), 0px 18.5px 20.8px -2.5px hsl(0deg 0% 62% / 0.36);
